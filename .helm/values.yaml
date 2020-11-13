@@ -339,7 +339,7 @@ datasources:
     datasources:
       - name: Prometheus
         type: prometheus
-        url: http://prometheus-server.monitoring
+        url: http://prometheus-server.monitoring/prometheus
         access: proxy
         isDefault: false  
       - name: Thanos
