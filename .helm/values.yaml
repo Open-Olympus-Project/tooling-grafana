@@ -154,23 +154,20 @@ ingress:
   # Values can be templated
   annotations:
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
-    # kubernetes.io/tls-acme: "true"
+    kubernetes.io/tls-acme: 'true'
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-passthrough: 'true'
   labels: {}
   path: /grafana
-  hosts:
-    - "observability.westeurope.cloudapp.azure.com"
+  hosts: []
+    # - "example.com"
   ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
-  extraPaths:
-  - path: /grafana/(.*)
-    backend:
-      serviceName: grafana
-      servicePort: 80
-  tls:
-  - hosts:
-    - observability.westeurope.cloudapp.azure.com
-    secretName: cert-key
+  extraPaths: []
+
+  tls: []
+  # - hosts:
+  #   - observability.westeurope.cloudapp.azure.com
+  #   secretName: cert-key
 
 resources: {}
 #  limits:
