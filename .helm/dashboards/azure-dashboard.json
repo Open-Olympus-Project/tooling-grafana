@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
   "links": [],
   "panels": [
     {
@@ -387,8 +386,11 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(functionexecutioncount_count_average{resource_group=~\"core-.*\"}[2m])) by (resource_name)",
+          "expr": "sum(functionexecutioncount_count_total{resource_group=~\"core-.*\"}) by (resource_name)",
+          "format": "time_series",
+          "instant": false,
           "interval": "",
+          "intervalFactor": 1,
           "legendFormat": "{{resouce_name}}",
           "refId": "A"
         }
@@ -436,6 +438,7 @@
       }
     }
   ],
+  "refresh": false,
   "schemaVersion": 26,
   "style": "dark",
   "tags": [],
@@ -443,7 +446,7 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
@@ -463,5 +466,5 @@
   "timezone": "",
   "title": "Azure dashboard",
   "uid": "VtyYA5KMz",
-  "version": 2
+  "version": 1
 }
