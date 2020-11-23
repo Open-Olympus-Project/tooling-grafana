@@ -360,10 +360,11 @@
       },
       "hiddenSeries": false,
       "id": 9,
+      "interval": "",
       "legend": {
         "alignAsTable": true,
-        "avg": true,
-        "current": false,
+        "avg": false,
+        "current": true,
         "max": false,
         "min": false,
         "rightSide": true,
@@ -415,6 +416,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:198",
           "decimals": 0,
           "format": "short",
           "label": "Executions",
@@ -424,6 +426,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:199",
           "format": "short",
           "label": null,
           "logBase": 1,
