@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "iteration": 1606304600131,
   "links": [],
   "panels": [
     {
@@ -88,9 +89,9 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "sum(scheduledmessages_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(scheduledmessages_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{resource_name}}",
           "refId": "A"
         }
       ],
@@ -152,7 +153,7 @@
       "repeat": null,
       "targets": [
         {
-          "expr": "sum(activemessages_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(activemessages_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -215,7 +216,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "sum(messages_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(messages_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -289,7 +290,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "sum(deadletteredmessages_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(deadletteredmessages_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -343,7 +344,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "sum(incomingrequests_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(incomingrequests_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -397,7 +398,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "sum(successfulrequests_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(successfulrequests_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -463,7 +464,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "sum(servererrors_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(servererrors_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -528,7 +529,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "sum(usererrors_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(usererrors_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -613,37 +614,37 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(messages_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(messages_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Total",
           "refId": "C"
         },
         {
-          "expr": "sum(scheduledmessages_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(scheduledmessages_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Scheduled",
           "refId": "F"
         },
         {
-          "expr": "sum(incomingmessages_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(incomingmessages_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Incoming",
           "refId": "A"
         },
         {
-          "expr": "sum(activemessages_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(activemessages_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Active",
           "refId": "D"
         },
         {
-          "expr": "sum(outgoingmessages_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(outgoingmessages_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Outgoing",
           "refId": "B"
         },
         {
-          "expr": "sum(deadletteredmessages_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(deadletteredmessages_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Deadlettered",
           "refId": "E"
@@ -768,26 +769,26 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(incomingrequests_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(incomingrequests_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "instant": false,
           "interval": "",
           "legendFormat": "Incoming",
           "refId": "B"
         },
         {
-          "expr": "sum(successfulrequests_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(successfulrequests_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Successful",
           "refId": "C"
         },
         {
-          "expr": "sum(servererrors_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(servererrors_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Server errors",
           "refId": "F"
         },
         {
-          "expr": "sum(usererrors_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(usererrors_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "User errors",
           "refId": "A"
@@ -880,7 +881,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "sum(activeconnections_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(activeconnections_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -934,7 +935,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "sum(connectionsopened_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(connectionsopened_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -988,7 +989,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "sum(connectionsclosed_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(connectionsclosed_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -1074,19 +1075,19 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(activeconnections_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(activeconnections_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Active",
           "refId": "C"
         },
         {
-          "expr": "sum(connectionsopened_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(connectionsopened_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Open",
           "refId": "F"
         },
         {
-          "expr": "sum(connectionsclosed_count_total{resource_name=~\"dpevents-servicebus-.*\"}) by (resource_name)",
+          "expr": "sum(connectionsclosed_count_total{resource_name=~\"dpevents-servicebus-$Environment\"}) by (resource_name)",
           "interval": "",
           "legendFormat": "Closed",
           "refId": "A"
@@ -1198,7 +1199,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(bytesreceived_bytes_average{resource_group=~\"ingress-.*\"}[2m])) by (resource_name)",
+          "expr": "sum(rate(bytesreceived_bytes_average{resource_group=~\"ingress-$Environment\"}[2m])) by (resource_name)",
           "interval": "",
           "legendFormat": "{{resource_name}}",
           "refId": "A"
@@ -1294,7 +1295,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(bytessent_bytes_average{resource_group=~\"egress-.*\"}[2m])) by (resource_name)",
+          "expr": "sum(rate(bytessent_bytes_average{resource_group=~\"egress-$Environment\"}[2m])) by (resource_name)",
           "interval": "",
           "legendFormat": "{{resource_name}}",
           "refId": "B"
@@ -1390,13 +1391,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(bytesreceived_bytes_average{resource_group=~\"core-.*\"}[2m])) by (resource_name)",
+          "expr": "sum(rate(bytesreceived_bytes_average{resource_group=~\"core-$Environment\"}[2m])) by (resource_name)",
           "interval": "",
           "legendFormat": "{{resource_name}}",
           "refId": "A"
         },
         {
-          "expr": "- sum(rate(bytessent_bytes_average{resource_group=~\"core-.*\"}[2m])) by (resource_name)",
+          "expr": "- sum(rate(bytessent_bytes_average{resource_group=~\"core-$Environment\"}[2m])) by (resource_name)",
           "interval": "",
           "legendFormat": "{{resource_name}}",
           "refId": "B"
@@ -1508,7 +1509,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(functionexecutioncount_count_total{resource_group=~\"core-.*\"}) by (resource_name)",
+          "expr": "sum(functionexecutioncount_count_total{resource_group=~\"core-$Environment\"}) by (resource_name)",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -1567,7 +1568,42 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "test",
+          "value": "test"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Environment",
+        "multi": false,
+        "name": "Environment",
+        "options": [
+          {
+            "selected": true,
+            "text": "test",
+            "value": "test"
+          },
+          {
+            "selected": false,
+            "text": "preprod",
+            "value": "preprod"
+          },
+          {
+            "selected": false,
+            "text": "prod",
+            "value": "prod"
+          }
+        ],
+        "query": "test,preprod,prod",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
   },
   "time": {
     "from": "now-6h",
