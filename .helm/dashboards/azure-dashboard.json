@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606308387082,
+  "iteration": 1606312197108,
   "links": [],
   "panels": [
     {
@@ -47,7 +47,8 @@
                 "value": null
               }
             ]
-          }
+          },
+          "unit": "s"
         },
         "overrides": []
       },
@@ -65,7 +66,7 @@
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
-            "last"
+            "lastNotNull"
           ],
           "fields": "",
           "values": false
@@ -75,7 +76,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "httpresponsetime_seconds_total{resource_group=\"ingress-$Environment\"}",
+          "expr": "rate(httpresponsetime_seconds_total{resource_group=\"ingress-$Environment\"}[2m])",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -2157,8 +2158,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "test",
-          "value": "test"
+          "text": "prod",
+          "value": "prod"
         },
         "hide": 0,
         "includeAll": false,
@@ -2167,7 +2168,7 @@
         "name": "Environment",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "test",
             "value": "test"
           },
@@ -2177,7 +2178,7 @@
             "value": "preprod"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "prod",
             "value": "prod"
           }
