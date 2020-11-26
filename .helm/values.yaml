@@ -341,12 +341,16 @@ datasources:
         type: prometheus
         url: http://prometheus-server.monitoring/prometheus
         access: proxy
-        isDefault: false  
+        isDefault: false 
+        jsonData:
+          timeInterval: '1m'
       - name: Thanos
         type: prometheus
         url: http://thanos-query-http.monitoring:10902/thanos-query
         access: proxy
-        isDefault: true  
+        isDefault: true 
+        jsonData:
+          timeInterval: '1m'
 
 ## Configure notifiers
 ## ref: http://docs.grafana.org/administration/provisioning/#alert-notification-channels
