@@ -15,7 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1606468336252,
+  "id": 4,
+  "iteration": 1606483859068,
   "links": [],
   "panels": [
     {
@@ -87,7 +88,7 @@
             "h": 4,
             "w": 4,
             "x": 0,
-            "y": 1
+            "y": 24
           },
           "id": 59,
           "interval": "1m",
@@ -106,6 +107,13 @@
             "textMode": "auto"
           },
           "pluginVersion": "7.1.5",
+          "scopedVars": {
+            "Environment": {
+              "selected": true,
+              "text": "prod",
+              "value": "prod"
+            }
+          },
           "targets": [
             {
               "expr": "( http2xx_count_total{resource_group=\"ingress-$Environment\"}/requests_count_total{resource_group=\"ingress-$Environment\"}) * 100",
@@ -144,9 +152,9 @@
             "h": 4,
             "w": 3,
             "x": 4,
-            "y": 1
+            "y": 24
           },
-          "id": 62,
+          "id": 66,
           "interval": "1m",
           "options": {
             "colorMode": "value",
@@ -201,7 +209,7 @@
             "h": 4,
             "w": 3,
             "x": 7,
-            "y": 1
+            "y": 24
           },
           "id": 44,
           "interval": "1m",
@@ -220,6 +228,13 @@
             "textMode": "auto"
           },
           "pluginVersion": "7.1.5",
+          "scopedVars": {
+            "Environment": {
+              "selected": true,
+              "text": "prod",
+              "value": "prod"
+            }
+          },
           "targets": [
             {
               "expr": "httpresponsetime_seconds_average{resource_group=\"ingress-$Environment\"}!=0",
@@ -259,9 +274,9 @@
             "h": 4,
             "w": 6,
             "x": 10,
-            "y": 1
+            "y": 24
           },
-          "id": 40,
+          "id": 68,
           "interval": "1m",
           "options": {
             "colorMode": "value",
@@ -333,7 +348,7 @@
             "h": 4,
             "w": 4,
             "x": 16,
-            "y": 1
+            "y": 24
           },
           "id": 45,
           "interval": "1m",
@@ -352,6 +367,13 @@
             "textMode": "auto"
           },
           "pluginVersion": "7.1.5",
+          "scopedVars": {
+            "Environment": {
+              "selected": true,
+              "text": "prod",
+              "value": "prod"
+            }
+          },
           "targets": [
             {
               "expr": "rate(bytesreceived_bytes_total{resource_group=\"ingress-$Environment\"}[$__range])",
@@ -389,7 +411,7 @@
             "h": 4,
             "w": 4,
             "x": 20,
-            "y": 1
+            "y": 24
           },
           "id": 46,
           "interval": "1m",
@@ -408,6 +430,13 @@
             "textMode": "auto"
           },
           "pluginVersion": "7.1.5",
+          "scopedVars": {
+            "Environment": {
+              "selected": true,
+              "text": "prod",
+              "value": "prod"
+            }
+          },
           "targets": [
             {
               "expr": "rate(bytessent_bytes_total{resource_group=\"ingress-$Environment\"}[$__range])",
@@ -459,10 +488,10 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 5
+            "y": 28
           },
           "hiddenSeries": false,
-          "id": 37,
+          "id": 71,
           "interval": "1m",
           "legend": {
             "alignAsTable": true,
@@ -551,7 +580,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:411",
               "decimals": 0,
               "format": "short",
               "label": null,
@@ -561,7 +589,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:412",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -613,7 +640,7 @@
             "h": 9,
             "w": 12,
             "x": 0,
-            "y": 14
+            "y": 37
           },
           "hiddenSeries": false,
           "id": 47,
@@ -644,6 +671,13 @@
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
+          "scopedVars": {
+            "Environment": {
+              "selected": true,
+              "text": "prod",
+              "value": "prod"
+            }
+          },
           "seriesOverrides": [],
           "spaceLength": 10,
           "stack": false,
@@ -676,7 +710,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:411",
               "decimals": 0,
               "format": "s",
               "label": null,
@@ -686,7 +719,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:412",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -718,10 +750,10 @@
             "h": 9,
             "w": 12,
             "x": 12,
-            "y": 14
+            "y": 37
           },
           "hiddenSeries": false,
-          "id": 2,
+          "id": 73,
           "interval": "1m",
           "legend": {
             "alignAsTable": true,
@@ -781,7 +813,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:681",
               "decimals": 1,
               "format": "decbytes",
               "label": "",
@@ -791,7 +822,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:682",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -806,7 +836,7 @@
           }
         }
       ],
-      "repeat": "resource",
+      "repeat": null,
       "title": "Ingress",
       "type": "row"
     },
@@ -922,7 +952,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:497",
               "format": "s",
               "label": null,
               "logBase": 1,
@@ -931,7 +960,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:498",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -1026,7 +1054,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:681",
               "decimals": 1,
               "format": "decbytes",
               "label": "",
@@ -1036,7 +1063,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:682",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -1127,7 +1153,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:418",
               "decimals": 0,
               "format": "short",
               "label": null,
@@ -1137,7 +1162,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:419",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -1915,7 +1939,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:411",
               "decimals": null,
               "format": "short",
               "label": null,
@@ -1925,7 +1948,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:412",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -2059,7 +2081,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:411",
               "decimals": null,
               "format": "short",
               "label": null,
@@ -2069,7 +2090,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:412",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -2320,7 +2340,6 @@
           },
           "yaxes": [
             {
-              "$$hashKey": "object:411",
               "decimals": null,
               "format": "short",
               "label": null,
@@ -2330,7 +2349,6 @@
               "show": true
             },
             {
-              "$$hashKey": "object:412",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -2350,797 +2368,791 @@
       "type": "row"
     },
     {
-			"collapsed": true,
-			"datasource": null,
-			"gridPos": {
-				"h": 1,
-				"w": 24,
-				"x": 0,
-				"y": 0
-			},
-			"id": 33,
-			"panels": [
-				{
-					"datasource": null,
-					"fieldConfig": {
-						"defaults": {
-							"custom": {},
-							"decimals": 0,
-							"mappings": [],
-							"min": 0,
-							"thresholds": {
-								"mode": "percentage",
-								"steps": [
-									{
-										"color": "rgb(255, 255, 255)",
-										"value": null
-									}
-								]
-							},
-							"unit": "percent"
-						},
-						"overrides": [
-							{
-								"matcher": {
-									"id": "byName",
-									"options": "Success rate"
-								},
-								"properties": [
-									{
-										"id": "thresholds",
-										"value": {
-											"mode": "percentage",
-											"steps": [
-												{
-													"color": "green",
-													"value": null
-												},
-												{
-													"color": "semi-dark-red",
-													"value": 0
-												},
-												{
-													"color": "semi-dark-yellow",
-													"value": 50
-												},
-												{
-													"color": "semi-dark-green",
-													"value": 100
-												}
-											]
-										}
-									}
-								]
-							}
-						]
-					},
-					"gridPos": {
-						"h": 4,
-						"w": 4,
-						"x": 0,
-						"y": 1
-					},
-					"id": 59,
-					"interval": "1m",
-					"options": {
-						"colorMode": "background",
-						"graphMode": "none",
-						"justifyMode": "center",
-						"orientation": "auto",
-						"reduceOptions": {
-							"calcs": [
-								"lastNotNull"
-							],
-							"fields": "",
-							"values": false
-						},
-						"textMode": "auto"
-					},
-					"pluginVersion": "7.1.5",
-					"targets": [
-						{
-							"expr": "( http2xx_count_total{resource_group=\"datacatalogapi-$Environment\"}/requests_count_total{resource_group=\"datacatalogapi-$Environment\"}) * 100",
-							"interval": "",
-							"legendFormat": "Success rate",
-							"refId": "E"
-						}
-					],
-					"timeFrom": null,
-					"timeShift": null,
-					"title": "Http codes",
-					"transformations": [],
-					"type": "stat"
-				},
-				{
-					"datasource": null,
-					"fieldConfig": {
-						"defaults": {
-							"custom": {},
-							"mappings": [],
-							"min": 0,
-							"thresholds": {
-								"mode": "percentage",
-								"steps": [
-									{
-										"color": "rgb(255, 255, 255)",
-										"value": null
-									}
-								]
-							},
-							"unit": "reqps"
-						},
-						"overrides": []
-					},
-					"gridPos": {
-						"h": 4,
-						"w": 3,
-						"x": 4,
-						"y": 1
-					},
-					"id": 62,
-					"interval": "1m",
-					"options": {
-						"colorMode": "value",
-						"graphMode": "none",
-						"justifyMode": "center",
-						"orientation": "auto",
-						"reduceOptions": {
-							"calcs": [
-								"sum"
-							],
-							"fields": "",
-							"values": false
-						},
-						"textMode": "auto"
-					},
-					"pluginVersion": "7.1.5",
-					"targets": [
-						{
-							"expr": "rate(requests_count_total{resource_group=\"datacatalogapi-$Environment\"}[$__range])",
-							"interval": "",
-							"legendFormat": "{{resource_name}}",
-							"refId": "E"
-						}
-					],
-					"timeFrom": null,
-					"timeShift": null,
-					"title": "Requests/s",
-					"transformations": [],
-					"type": "stat"
-				},
-				{
-					"datasource": null,
-					"fieldConfig": {
-						"defaults": {
-							"custom": {},
-							"mappings": [],
-							"min": 0,
-							"thresholds": {
-								"mode": "percentage",
-								"steps": [
-									{
-										"color": "rgb(255, 255, 255)",
-										"value": null
-									}
-								]
-							},
-							"unit": "s"
-						},
-						"overrides": []
-					},
-					"gridPos": {
-						"h": 4,
-						"w": 3,
-						"x": 7,
-						"y": 1
-					},
-					"id": 44,
-					"interval": "1m",
-					"options": {
-						"colorMode": "value",
-						"graphMode": "none",
-						"justifyMode": "auto",
-						"orientation": "auto",
-						"reduceOptions": {
-							"calcs": [
-								"mean"
-							],
-							"fields": "",
-							"values": false
-						},
-						"textMode": "auto"
-					},
-					"pluginVersion": "7.1.5",
-					"targets": [
-						{
-							"expr": "httpresponsetime_seconds_average{resource_group=\"datacatalogapi-$Environment\"}!=0",
-							"interval": "",
-							"intervalFactor": 1,
-							"legendFormat": "",
-							"refId": "A"
-						}
-					],
-					"timeFrom": null,
-					"timeShift": null,
-					"title": "Avg response time",
-					"transformations": [],
-					"type": "stat"
-				},
-				{
-					"datasource": null,
-					"fieldConfig": {
-						"defaults": {
-							"custom": {},
-							"decimals": 0,
-							"mappings": [],
-							"min": 0,
-							"thresholds": {
-								"mode": "percentage",
-								"steps": [
-									{
-										"color": "rgb(255, 255, 255)",
-										"value": null
-									}
-								]
-							}
-						},
-						"overrides": []
-					},
-					"gridPos": {
-						"h": 4,
-						"w": 6,
-						"x": 10,
-						"y": 1
-					},
-					"id": 40,
-					"interval": "1m",
-					"options": {
-						"colorMode": "value",
-						"graphMode": "none",
-						"justifyMode": "center",
-						"orientation": "auto",
-						"reduceOptions": {
-							"calcs": [
-								"sum"
-							],
-							"fields": "",
-							"values": false
-						},
-						"textMode": "auto"
-					},
-					"pluginVersion": "7.1.5",
-					"targets": [
-						{
-							"expr": "http2xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"legendFormat": "2xx",
-							"refId": "A"
-						},
-						{
-							"expr": "http3xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"legendFormat": "3xx",
-							"refId": "B"
-						},
-						{
-							"expr": "http4xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"legendFormat": "4xx",
-							"refId": "C"
-						},
-						{
-							"expr": "http5xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"legendFormat": "5xx",
-							"refId": "D"
-						}
-					],
-					"timeFrom": null,
-					"timeShift": null,
-					"title": "Http codes",
-					"type": "stat"
-				},
-				{
-					"datasource": null,
-					"fieldConfig": {
-						"defaults": {
-							"custom": {},
-							"mappings": [],
-							"min": 0,
-							"thresholds": {
-								"mode": "percentage",
-								"steps": [
-									{
-										"color": "rgb(255, 255, 255)",
-										"value": null
-									}
-								]
-							},
-							"unit": "Bps"
-						},
-						"overrides": []
-					},
-					"gridPos": {
-						"h": 4,
-						"w": 4,
-						"x": 16,
-						"y": 1
-					},
-					"id": 45,
-					"interval": "1m",
-					"options": {
-						"colorMode": "value",
-						"graphMode": "none",
-						"justifyMode": "center",
-						"orientation": "auto",
-						"reduceOptions": {
-							"calcs": [
-								"sum"
-							],
-							"fields": "",
-							"values": false
-						},
-						"textMode": "auto"
-					},
-					"pluginVersion": "7.1.5",
-					"targets": [
-						{
-							"expr": "rate(bytesreceived_bytes_total{resource_group=\"datacatalogapi-$Environment\"}[$__range])",
-							"interval": "",
-							"legendFormat": "",
-							"refId": "A"
-						}
-					],
-					"timeFrom": null,
-					"timeShift": null,
-					"title": "Data received",
-					"type": "stat"
-				},
-				{
-					"datasource": null,
-					"fieldConfig": {
-						"defaults": {
-							"custom": {},
-							"mappings": [],
-							"min": 0,
-							"thresholds": {
-								"mode": "percentage",
-								"steps": [
-									{
-										"color": "rgb(255, 255, 255)",
-										"value": null
-									}
-								]
-							},
-							"unit": "Bps"
-						},
-						"overrides": []
-					},
-					"gridPos": {
-						"h": 4,
-						"w": 4,
-						"x": 20,
-						"y": 1
-					},
-					"id": 46,
-					"interval": "1m",
-					"options": {
-						"colorMode": "value",
-						"graphMode": "none",
-						"justifyMode": "center",
-						"orientation": "auto",
-						"reduceOptions": {
-							"calcs": [
-								"sum"
-							],
-							"fields": "",
-							"values": false
-						},
-						"textMode": "auto"
-					},
-					"pluginVersion": "7.1.5",
-					"targets": [
-						{
-							"expr": "rate(bytessent_bytes_total{resource_group=\"datacatalogapi-$Environment\"}[$__range])",
-							"interval": "",
-							"legendFormat": "",
-							"refId": "A"
-						}
-					],
-					"timeFrom": null,
-					"timeShift": null,
-					"title": "Data sent",
-					"type": "stat"
-				},
-				{
-					"aliasColors": {},
-					"bars": false,
-					"dashLength": 10,
-					"dashes": false,
-					"datasource": "Prometheus",
-					"decimals": null,
-					"fieldConfig": {
-						"defaults": {
-							"custom": {},
-							"mappings": [],
-							"min": 0,
-							"thresholds": {
-								"mode": "percentage",
-								"steps": [
-									{
-										"color": "green",
-										"value": null
-									},
-									{
-										"color": "dark-red",
-										"value": 0
-									},
-									{
-										"color": "dark-green",
-										"value": 100
-									}
-								]
-							}
-						},
-						"overrides": []
-					},
-					"fill": 1,
-					"fillGradient": 0,
-					"gridPos": {
-						"h": 9,
-						"w": 24,
-						"x": 0,
-						"y": 5
-					},
-					"hiddenSeries": false,
-					"id": 37,
-					"interval": "1m",
-					"legend": {
-						"alignAsTable": true,
-						"avg": false,
-						"current": false,
-						"max": false,
-						"min": false,
-						"rightSide": true,
-						"show": true,
-						"total": true,
-						"values": true
-					},
-					"lines": true,
-					"linewidth": 1,
-					"links": [
-						{
-							"targetBlank": true,
-							"title": "Explanation",
-							"url": "https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-metrics-azure-monitor#message-metrics"
-						}
-					],
-					"nullPointMode": "null",
-					"percentage": false,
-					"pluginVersion": "7.1.5",
-					"pointradius": 2,
-					"points": false,
-					"renderer": "flot",
-					"seriesOverrides": [],
-					"spaceLength": 10,
-					"stack": false,
-					"steppedLine": false,
-					"targets": [
-						{
-							"expr": "requests_count_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"intervalFactor": 1,
-							"legendFormat": "Requests",
-							"refId": "E"
-						},
-						{
-							"expr": "http2xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"intervalFactor": 1,
-							"legendFormat": "2xx",
-							"refId": "A"
-						},
-						{
-							"expr": "http3xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"intervalFactor": 1,
-							"legendFormat": "3xx",
-							"refId": "B"
-						},
-						{
-							"expr": "http4xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"intervalFactor": 1,
-							"legendFormat": "4xx",
-							"refId": "C"
-						},
-						{
-							"expr": "http5xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"intervalFactor": 1,
-							"legendFormat": "5xx",
-							"refId": "D"
-						}
-					],
-					"thresholds": [],
-					"timeFrom": null,
-					"timeRegions": [],
-					"timeShift": null,
-					"title": "requests",
-					"tooltip": {
-						"shared": true,
-						"sort": 0,
-						"value_type": "individual"
-					},
-					"type": "graph",
-					"xaxis": {
-						"buckets": null,
-						"mode": "time",
-						"name": null,
-						"show": true,
-						"values": []
-					},
-					"yaxes": [
-						{
-							"$$hashKey": "object:411",
-							"decimals": 0,
-							"format": "short",
-							"label": null,
-							"logBase": 1,
-							"max": null,
-							"min": "0",
-							"show": true
-						},
-						{
-							"$$hashKey": "object:412",
-							"format": "short",
-							"label": null,
-							"logBase": 1,
-							"max": null,
-							"min": null,
-							"show": false
-						}
-					],
-					"yaxis": {
-						"align": false,
-						"alignLevel": null
-					}
-				},
-				{
-					"aliasColors": {},
-					"bars": false,
-					"dashLength": 10,
-					"dashes": false,
-					"datasource": "Prometheus",
-					"decimals": null,
-					"fieldConfig": {
-						"defaults": {
-							"custom": {},
-							"mappings": [],
-							"min": 0,
-							"thresholds": {
-								"mode": "percentage",
-								"steps": [
-									{
-										"color": "green",
-										"value": null
-									},
-									{
-										"color": "dark-red",
-										"value": 0
-									},
-									{
-										"color": "dark-green",
-										"value": 100
-									}
-								]
-							}
-						},
-						"overrides": []
-					},
-					"fill": 1,
-					"fillGradient": 0,
-					"gridPos": {
-						"h": 9,
-						"w": 12,
-						"x": 0,
-						"y": 14
-					},
-					"hiddenSeries": false,
-					"id": 47,
-					"interval": "1m",
-					"legend": {
-						"alignAsTable": true,
-						"avg": true,
-						"current": false,
-						"max": false,
-						"min": false,
-						"rightSide": true,
-						"show": true,
-						"total": false,
-						"values": true
-					},
-					"lines": true,
-					"linewidth": 1,
-					"links": [
-						{
-							"targetBlank": true,
-							"title": "Explanation",
-							"url": "https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-metrics-azure-monitor#message-metrics"
-						}
-					],
-					"nullPointMode": "null",
-					"percentage": false,
-					"pluginVersion": "7.1.5",
-					"pointradius": 2,
-					"points": false,
-					"renderer": "flot",
-					"seriesOverrides": [],
-					"spaceLength": 10,
-					"stack": false,
-					"steppedLine": false,
-					"targets": [
-						{
-							"expr": "cputime_seconds_average{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"legendFormat": "cpu",
-							"refId": "A"
-						}
-					],
-					"thresholds": [],
-					"timeFrom": null,
-					"timeRegions": [],
-					"timeShift": null,
-					"title": "Avg cpu time",
-					"tooltip": {
-						"shared": true,
-						"sort": 0,
-						"value_type": "individual"
-					},
-					"type": "graph",
-					"xaxis": {
-						"buckets": null,
-						"mode": "time",
-						"name": null,
-						"show": true,
-						"values": []
-					},
-					"yaxes": [
-						{
-							"$$hashKey": "object:411",
-							"decimals": 0,
-							"format": "s",
-							"label": null,
-							"logBase": 1,
-							"max": null,
-							"min": "0",
-							"show": true
-						},
-						{
-							"$$hashKey": "object:412",
-							"format": "short",
-							"label": null,
-							"logBase": 1,
-							"max": null,
-							"min": null,
-							"show": false
-						}
-					],
-					"yaxis": {
-						"align": false,
-						"alignLevel": null
-					}
-				},
-				{
-					"aliasColors": {},
-					"bars": false,
-					"dashLength": 10,
-					"dashes": false,
-					"datasource": null,
-					"fieldConfig": {
-						"defaults": {
-							"custom": {}
-						},
-						"overrides": []
-					},
-					"fill": 1,
-					"fillGradient": 0,
-					"gridPos": {
-						"h": 9,
-						"w": 12,
-						"x": 12,
-						"y": 14
-					},
-					"hiddenSeries": false,
-					"id": 2,
-					"interval": "1m",
-					"legend": {
-						"alignAsTable": true,
-						"avg": false,
-						"current": false,
-						"max": false,
-						"min": false,
-						"rightSide": true,
-						"show": true,
-						"sideWidth": null,
-						"total": true,
-						"values": true
-					},
-					"lines": true,
-					"linewidth": 1,
-					"nullPointMode": "null",
-					"percentage": false,
-					"pluginVersion": "7.1.5",
-					"pointradius": 2,
-					"points": false,
-					"renderer": "flot",
-					"seriesOverrides": [],
-					"spaceLength": 10,
-					"stack": false,
-					"steppedLine": false,
-					"targets": [
-						{
-							"expr": "bytesreceived_bytes_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"legendFormat": "Received",
-							"refId": "A"
-						},
-						{
-							"expr": "- bytessent_bytes_total{resource_group=\"datacatalogapi-$Environment\"}",
-							"interval": "",
-							"legendFormat": "Sent",
-							"refId": "B"
-						}
-					],
-					"thresholds": [],
-					"timeFrom": null,
-					"timeRegions": [],
-					"timeShift": null,
-					"title": "Total IO",
-					"tooltip": {
-						"shared": true,
-						"sort": 0,
-						"value_type": "individual"
-					},
-					"type": "graph",
-					"xaxis": {
-						"buckets": null,
-						"mode": "time",
-						"name": null,
-						"show": true,
-						"values": []
-					},
-					"yaxes": [
-						{
-							"$$hashKey": "object:681",
-							"decimals": 1,
-							"format": "decbytes",
-							"label": "",
-							"logBase": 1,
-							"max": null,
-							"min": null,
-							"show": true
-						},
-						{
-							"$$hashKey": "object:682",
-							"format": "short",
-							"label": null,
-							"logBase": 1,
-							"max": null,
-							"min": null,
-							"show": true
-						}
-					],
-					"yaxis": {
-						"align": false,
-						"alignLevel": null
-					}
-				}
-			],
-			"repeat": "resource",
-			"title": "DatacatalogApi",
-			"type": "row"
-		}
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 3
+      },
+      "id": 64,
+      "panels": [],
+      "title": "DatacatalogApi",
+      "type": "row"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "decimals": 0,
+          "mappings": [],
+          "min": 0,
+          "noValue": "N/A",
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "rgb(255, 255, 255)",
+                "value": null
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Success rate"
+            },
+            "properties": [
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "percentage",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "semi-dark-red",
+                      "value": 0
+                    },
+                    {
+                      "color": "semi-dark-yellow",
+                      "value": 50
+                    },
+                    {
+                      "color": "semi-dark-green",
+                      "value": 100
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 4
+      },
+      "id": 65,
+      "interval": "1m",
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.1.5",
+      "targets": [
+        {
+          "expr": "( http2xx_count_total{resource_group=\"datacatalogapi-$Environment\"}/requests_count_total{resource_group=\"datacatalogapi-$Environment\"}) * 100",
+          "interval": "",
+          "legendFormat": "Success rate",
+          "refId": "E"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Http codes",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "rgb(255, 255, 255)",
+                "value": null
+              }
+            ]
+          },
+          "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 4,
+        "y": 4
+      },
+      "id": 62,
+      "interval": "1m",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.1.5",
+      "targets": [
+        {
+          "expr": "rate(requests_count_total{resource_group=\"datacatalogapi-$Environment\"}[$__range])",
+          "interval": "",
+          "legendFormat": "{{resource_name}}",
+          "refId": "E"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Requests/s",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "min": 0,
+          "noValue": "N/A",
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "rgb(255, 255, 255)",
+                "value": null
+              }
+            ]
+          },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 7,
+        "y": 4
+      },
+      "id": 67,
+      "interval": "1m",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.1.5",
+      "targets": [
+        {
+          "expr": "httpresponsetime_seconds_average{resource_group=\"datacatalogapi-$Environment\"}!=0",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Avg response time",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "decimals": 0,
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "rgb(255, 255, 255)",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 10,
+        "y": 4
+      },
+      "id": 40,
+      "interval": "1m",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.1.5",
+      "targets": [
+        {
+          "expr": "http2xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "legendFormat": "2xx",
+          "refId": "A"
+        },
+        {
+          "expr": "http3xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "legendFormat": "3xx",
+          "refId": "B"
+        },
+        {
+          "expr": "http4xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "legendFormat": "4xx",
+          "refId": "C"
+        },
+        {
+          "expr": "http5xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "legendFormat": "5xx",
+          "refId": "D"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Http codes",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "rgb(255, 255, 255)",
+                "value": null
+              }
+            ]
+          },
+          "unit": "Bps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 4
+      },
+      "id": 69,
+      "interval": "1m",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.1.5",
+      "targets": [
+        {
+          "expr": "rate(bytesreceived_bytes_total{resource_group=\"datacatalogapi-$Environment\"}[$__range])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Data received",
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "rgb(255, 255, 255)",
+                "value": null
+              }
+            ]
+          },
+          "unit": "Bps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 4
+      },
+      "id": 70,
+      "interval": "1m",
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.1.5",
+      "targets": [
+        {
+          "expr": "rate(bytessent_bytes_total{resource_group=\"datacatalogapi-$Environment\"}[$__range])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Data sent",
+      "type": "stat"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "decimals": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 100
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "hiddenSeries": false,
+      "id": 37,
+      "interval": "1m",
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Explanation",
+          "url": "https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-metrics-azure-monitor#message-metrics"
+        }
+      ],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "requests_count_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Requests",
+          "refId": "E"
+        },
+        {
+          "expr": "http2xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "2xx",
+          "refId": "A"
+        },
+        {
+          "expr": "http3xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "3xx",
+          "refId": "B"
+        },
+        {
+          "expr": "http4xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "4xx",
+          "refId": "C"
+        },
+        {
+          "expr": "http5xx_count_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "5xx",
+          "refId": "D"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "requests",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "decimals": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 0
+              },
+              {
+                "color": "dark-green",
+                "value": 100
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 17
+      },
+      "hiddenSeries": false,
+      "id": 72,
+      "interval": "1m",
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Explanation",
+          "url": "https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-metrics-azure-monitor#message-metrics"
+        }
+      ],
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "cputime_seconds_average{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "legendFormat": "cpu",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Avg cpu time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 0,
+          "format": "s",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 17
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "interval": "1m",
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sideWidth": null,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "percentage": false,
+      "pluginVersion": "7.1.5",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "bytesreceived_bytes_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "legendFormat": "Received",
+          "refId": "A"
+        },
+        {
+          "expr": "- bytessent_bytes_total{resource_group=\"datacatalogapi-$Environment\"}",
+          "interval": "",
+          "legendFormat": "Sent",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Total IO",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 1,
+          "format": "decbytes",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
   ],
   "refresh": "1m",
   "schemaVersion": 26,
@@ -3205,5 +3217,5 @@
   "timezone": "",
   "title": "Azure dashboard",
   "uid": "VtyYA5KMz",
-  "version": 1
+  "version": 8
 }
