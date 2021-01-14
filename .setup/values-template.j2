@@ -1,7 +1,7 @@
 ingress:
   path: /grafana
   hosts:
-    - ${fqdn}
+    - {{ fqdn }}
 
   extraPaths:
   - path: /grafana/(.*)
@@ -11,9 +11,9 @@ ingress:
 
   tls:
   - hosts:
-    - ${fqdn}
+    - {{ fqdn }}
     secretName: grafana-tls
 
 grafana.ini:
   server:
-    root_url: https://${fqdn}/grafana
+    root_url: https://{{ fqdn }}/grafana
