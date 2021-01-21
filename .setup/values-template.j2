@@ -1,13 +1,7 @@
 ingress:
-  path: /grafana
+  path: /argo(/|$)(.*)
   hosts:
     - {{ fqdn }}
-
-  extraPaths:
-  - path: /grafana/(.*)
-    backend:
-      serviceName: grafana
-      servicePort: 80
 
   tls:
   - hosts:
