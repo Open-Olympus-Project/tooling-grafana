@@ -157,7 +157,6 @@ ingress:
     kubernetes.io/tls-acme: 'true'
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/ssl-passthrough: 'true'
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
   labels: {}
   path: /grafana(/|$)(.*)
   hosts: []
