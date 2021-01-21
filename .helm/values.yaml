@@ -398,8 +398,6 @@ dashboards:
   default:
     K8s-Cluster-Metrics:
       file: dashboards/K8s-Cluster-Metrics.json
-    azure-dashboard:
-      file: dashboards/azure-dashboard.json
     Elastic-Search:
       # ref https://grafana.com/grafana/dashboards/2322
       gnetId: 2322
