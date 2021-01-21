@@ -16,11 +16,11 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1607328843092,
+  "iteration": 1611233866564,
   "links": [],
   "panels": [
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": null,
       "gridPos": {
         "h": 1,
@@ -29,1311 +29,784 @@
         "y": 0
       },
       "id": 33,
-      "panels": [],
+      "panels": [
+        {
+          "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "decimals": 0,
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "color": "rgb(255, 255, 255)",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "percent"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Success rate"
+                },
+                "properties": [
+                  {
+                    "id": "thresholds",
+                    "value": {
+                      "mode": "percentage",
+                      "steps": [
+                        {
+                          "color": "green",
+                          "value": null
+                        },
+                        {
+                          "color": "semi-dark-red",
+                          "value": 0
+                        },
+                        {
+                          "color": "semi-dark-yellow",
+                          "value": 50
+                        },
+                        {
+                          "color": "semi-dark-green",
+                          "value": 100
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 0,
+            "y": 1
+          },
+          "id": 59,
+          "interval": "1m",
+          "options": {
+            "colorMode": "background",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "7.1.5",
+          "targets": [
+            {
+              "expr": "( http2xx_count_total{resource_group=\"ingress-$Environment\"}/requests_count_total{resource_group=\"ingress-$Environment\"}) * 100",
+              "interval": "",
+              "legendFormat": "Success rate",
+              "refId": "E"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Http codes",
+          "transformations": [],
+          "type": "stat"
+        },
+        {
+          "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "color": "rgb(255, 255, 255)",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "reqps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 4,
+            "y": 1
+          },
+          "id": 66,
+          "interval": "1m",
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "sum"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "7.1.5",
+          "targets": [
+            {
+              "expr": "rate(requests_count_total{resource_group=\"ingress-$Environment\"}[$__range])",
+              "interval": "",
+              "legendFormat": "{{resource_name}}",
+              "refId": "E"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Requests/s",
+          "transformations": [],
+          "type": "stat"
+        },
+        {
+          "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "color": "rgb(255, 255, 255)",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 3,
+            "x": 7,
+            "y": 1
+          },
+          "id": 44,
+          "interval": "1m",
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "mean"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "7.1.5",
+          "targets": [
+            {
+              "expr": "httpresponsetime_seconds_average{resource_group=\"ingress-$Environment\"}!=0",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Avg response time",
+          "transformations": [],
+          "type": "stat"
+        },
+        {
+          "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "decimals": 0,
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "color": "rgb(255, 255, 255)",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 6,
+            "x": 10,
+            "y": 1
+          },
+          "id": 68,
+          "interval": "1m",
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "sum"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "7.1.5",
+          "targets": [
+            {
+              "expr": "http2xx_count_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "legendFormat": "2xx",
+              "refId": "A"
+            },
+            {
+              "expr": "http3xx_count_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "legendFormat": "3xx",
+              "refId": "B"
+            },
+            {
+              "expr": "http4xx_count_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "legendFormat": "4xx",
+              "refId": "C"
+            },
+            {
+              "expr": "http5xx_count_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "legendFormat": "5xx",
+              "refId": "D"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Http codes",
+          "type": "stat"
+        },
+        {
+          "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "decimals": 2,
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "color": "rgb(255, 255, 255)",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "Bps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 16,
+            "y": 1
+          },
+          "id": 45,
+          "interval": "1m",
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "sum"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "7.1.5",
+          "targets": [
+            {
+              "expr": "rate(bytesreceived_bytes_total{resource_group=\"ingress-$Environment\"}[$__range])",
+              "interval": "",
+              "legendFormat": "",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Data received",
+          "type": "stat"
+        },
+        {
+          "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "decimals": 2,
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "color": "rgb(255, 255, 255)",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "Bps"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 4,
+            "x": 20,
+            "y": 1
+          },
+          "id": 46,
+          "interval": "1m",
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "center",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "sum"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "auto"
+          },
+          "pluginVersion": "7.1.5",
+          "targets": [
+            {
+              "expr": "rate(bytessent_bytes_total{resource_group=\"ingress-$Environment\"}[$__range])",
+              "interval": "",
+              "legendFormat": "",
+              "refId": "A"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Data sent",
+          "type": "stat"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "decimals": 1,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "dark-red",
+                    "value": 0
+                  },
+                  {
+                    "color": "dark-green",
+                    "value": 100
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 9,
+            "w": 24,
+            "x": 0,
+            "y": 5
+          },
+          "hiddenSeries": false,
+          "id": 71,
+          "interval": "1m",
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "Explanation",
+              "url": "https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-metrics-azure-monitor#message-metrics"
+            }
+          ],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pluginVersion": "7.1.5",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "requests_count_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "Requests",
+              "refId": "E"
+            },
+            {
+              "expr": "http2xx_count_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "2xx",
+              "refId": "A"
+            },
+            {
+              "expr": "http3xx_count_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "3xx",
+              "refId": "B"
+            },
+            {
+              "expr": "http4xx_count_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "4xx",
+              "refId": "C"
+            },
+            {
+              "expr": "http5xx_count_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "5xx",
+              "refId": "D"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "requests",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "decimals": 1,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "percentage",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "dark-red",
+                    "value": 0
+                  },
+                  {
+                    "color": "dark-green",
+                    "value": 100
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 14
+          },
+          "hiddenSeries": false,
+          "id": 47,
+          "interval": "1m",
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [
+            {
+              "targetBlank": true,
+              "title": "Explanation",
+              "url": "https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-metrics-azure-monitor#message-metrics"
+            }
+          ],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pluginVersion": "7.1.5",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cputime_seconds_average{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "legendFormat": "cpu",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Avg cpu time",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "s",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "decimals": 1,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 14
+          },
+          "hiddenSeries": false,
+          "id": 73,
+          "interval": "1m",
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "sideWidth": null,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pluginVersion": "7.1.5",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "bytesreceived_bytes_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "legendFormat": "Received",
+              "refId": "A"
+            },
+            {
+              "expr": "- bytessent_bytes_total{resource_group=\"ingress-$Environment\"}",
+              "interval": "",
+              "legendFormat": "Sent",
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Total IO",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 1,
+              "format": "decbytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
       "repeat": null,
       "title": "Ingress",
       "type": "row"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "decimals": 0,
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "rgb(255, 255, 255)",
-                "value": null
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Success rate"
-            },
-            "properties": [
-              {
-                "id": "thresholds",
-                "value": {
-                  "mode": "percentage",
-                  "steps": [
-                    {
-                      "color": "green",
-                      "value": null
-                    },
-                    {
-                      "color": "semi-dark-red",
-                      "value": 0
-                    },
-                    {
-                      "color": "semi-dark-yellow",
-                      "value": 50
-                    },
-                    {
-                      "color": "semi-dark-green",
-                      "value": 100
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 0,
-        "y": 1
-      },
-      "id": 59,
-      "interval": "1m",
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.1.5",
-      "targets": [
-        {
-          "expr": "( http2xx_count_total{resource_group=\"ingress-$Environment\"}/requests_count_total{resource_group=\"ingress-$Environment\"}) * 100",
-          "interval": "",
-          "legendFormat": "Success rate",
-          "refId": "E"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Http codes",
-      "transformations": [],
-      "type": "stat"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "rgb(255, 255, 255)",
-                "value": null
-              }
-            ]
-          },
-          "unit": "reqps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 3,
-        "x": 4,
-        "y": 1
-      },
-      "id": 66,
-      "interval": "1m",
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "sum"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.1.5",
-      "targets": [
-        {
-          "expr": "rate(requests_count_total{resource_group=\"ingress-$Environment\"}[$__range])",
-          "interval": "",
-          "legendFormat": "{{resource_name}}",
-          "refId": "E"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Requests/s",
-      "transformations": [],
-      "type": "stat"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "rgb(255, 255, 255)",
-                "value": null
-              }
-            ]
-          },
-          "unit": "s"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 3,
-        "x": 7,
-        "y": 1
-      },
-      "id": 44,
-      "interval": "1m",
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.1.5",
-      "targets": [
-        {
-          "expr": "httpresponsetime_seconds_average{resource_group=\"ingress-$Environment\"}!=0",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Avg response time",
-      "transformations": [],
-      "type": "stat"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "decimals": 0,
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "rgb(255, 255, 255)",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 10,
-        "y": 1
-      },
-      "id": 68,
-      "interval": "1m",
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "sum"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.1.5",
-      "targets": [
-        {
-          "expr": "http2xx_count_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "legendFormat": "2xx",
-          "refId": "A"
-        },
-        {
-          "expr": "http3xx_count_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "legendFormat": "3xx",
-          "refId": "B"
-        },
-        {
-          "expr": "http4xx_count_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "legendFormat": "4xx",
-          "refId": "C"
-        },
-        {
-          "expr": "http5xx_count_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "legendFormat": "5xx",
-          "refId": "D"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Http codes",
-      "type": "stat"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "rgb(255, 255, 255)",
-                "value": null
-              }
-            ]
-          },
-          "unit": "Bps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 16,
-        "y": 1
-      },
-      "id": 45,
-      "interval": "1m",
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "sum"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.1.5",
-      "targets": [
-        {
-          "expr": "rate(bytesreceived_bytes_total{resource_group=\"ingress-$Environment\"}[$__range])",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Data received",
-      "type": "stat"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "rgb(255, 255, 255)",
-                "value": null
-              }
-            ]
-          },
-          "unit": "Bps"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 20,
-        "y": 1
-      },
-      "id": 46,
-      "interval": "1m",
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "sum"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.1.5",
-      "targets": [
-        {
-          "expr": "rate(bytessent_bytes_total{resource_group=\"ingress-$Environment\"}[$__range])",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Data sent",
-      "type": "stat"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "decimals": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "dark-red",
-                "value": 0
-              },
-              {
-                "color": "dark-green",
-                "value": 100
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
-        "y": 5
-      },
-      "hiddenSeries": false,
-      "id": 71,
-      "interval": "1m",
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [
-        {
-          "targetBlank": true,
-          "title": "Explanation",
-          "url": "https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-metrics-azure-monitor#message-metrics"
-        }
-      ],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pluginVersion": "7.1.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "requests_count_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "Requests",
-          "refId": "E"
-        },
-        {
-          "expr": "http2xx_count_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "2xx",
-          "refId": "A"
-        },
-        {
-          "expr": "http3xx_count_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "3xx",
-          "refId": "B"
-        },
-        {
-          "expr": "http4xx_count_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "4xx",
-          "refId": "C"
-        },
-        {
-          "expr": "http5xx_count_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "5xx",
-          "refId": "D"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "requests",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "decimals": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "dark-red",
-                "value": 0
-              },
-              {
-                "color": "dark-green",
-                "value": 100
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 0,
-        "y": 14
-      },
-      "hiddenSeries": false,
-      "id": 47,
-      "interval": "1m",
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [
-        {
-          "targetBlank": true,
-          "title": "Explanation",
-          "url": "https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-metrics-azure-monitor#message-metrics"
-        }
-      ],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pluginVersion": "7.1.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "cputime_seconds_average{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "legendFormat": "cpu",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Avg cpu time",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "s",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 12,
-        "x": 12,
-        "y": 14
-      },
-      "hiddenSeries": false,
-      "id": 73,
-      "interval": "1m",
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sideWidth": null,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "percentage": false,
-      "pluginVersion": "7.1.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "bytesreceived_bytes_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "legendFormat": "Received",
-          "refId": "A"
-        },
-        {
-          "expr": "- bytessent_bytes_total{resource_group=\"ingress-$Environment\"}",
-          "interval": "",
-          "legendFormat": "Sent",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Total IO",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 1,
-          "format": "decbytes",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "collapsed": false,
-      "datasource": null,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 23
-      },
-      "id": 49,
-      "panels": [],
-      "repeat": null,
-      "title": "Egress",
-      "type": "row"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "rgb(255, 255, 255)",
-                "value": null
-              }
-            ]
-          },
-          "unit": "s"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": "dpegressapi-"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "api"
-              }
-            ]
-          }
-        ]
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 11,
-        "x": 0,
-        "y": 24
-      },
-      "hiddenSeries": false,
-      "id": 51,
-      "interval": "1m",
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "connected",
-      "percentage": false,
-      "pluginVersion": "7.1.5",
-      "pointradius": 2,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "sum(httpresponsetime_seconds_average{resource_group=\"egress-$Environment\"}) by (resource_name) != 0",
-          "interval": "",
-          "legendFormat": "{{resource_name}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Avg response time",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "s",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 13,
-        "x": 11,
-        "y": 24
-      },
-      "hiddenSeries": false,
-      "id": 61,
-      "interval": "1m",
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "sideWidth": null,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "percentage": false,
-      "pluginVersion": "7.1.5",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "sum(bytessent_bytes_total{resource_group=\"egress-$Environment\"}) by (resource_name)",
-          "interval": "",
-          "legendFormat": "{{resource-name}}",
-          "refId": "B"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Data out",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 1,
-          "format": "decbytes",
-          "label": "",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 9,
-        "w": 11,
-        "x": 0,
-        "y": 33
-      },
-      "hiddenSeries": false,
-      "id": 55,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": false,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": false,
-        "min": false,
-        "rightSide": true,
-        "show": true,
-        "total": true,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "connected",
-      "percentage": false,
-      "pluginVersion": "7.1.5",
-      "pointradius": 2,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "requests_count_total{resource_group=\"egress-$Environment\"} != 0",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{resource_name}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Requests",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "transformations": [],
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "align": "left",
-            "displayMode": "color-background"
-          },
-          "mappings": [],
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "rgba(122, 122, 122, 0)",
-                "value": null
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byType",
-              "options": "number"
-            },
-            "properties": [
-              {
-                "id": "custom.align",
-                "value": "center"
-              },
-              {
-                "id": "custom.width",
-                "value": 100
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Success rate"
-            },
-            "properties": [
-              {
-                "id": "unit",
-                "value": "percent"
-              },
-              {
-                "id": "thresholds",
-                "value": {
-                  "mode": "percentage",
-                  "steps": [
-                    {
-                      "color": "rgba(115, 191, 105, 0)",
-                      "value": null
-                    },
-                    {
-                      "color": "semi-dark-red",
-                      "value": 0
-                    },
-                    {
-                      "color": "semi-dark-yellow",
-                      "value": 50
-                    },
-                    {
-                      "color": "dark-green",
-                      "value": 100
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 13,
-        "x": 11,
-        "y": 33
-      },
-      "id": 57,
-      "interval": "1m",
-      "options": {
-        "showHeader": true,
-        "sortBy": [
-          {
-            "desc": false,
-            "displayName": "resource_name"
-          }
-        ]
-      },
-      "pluginVersion": "7.1.5",
-      "targets": [
-        {
-          "expr": "sum_over_time(requests_count_total{resource_group=\"egress-$Environment\"}[$__range])",
-          "format": "table",
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "E"
-        },
-        {
-          "expr": "(sum_over_time(http2xx_count_total{resource_group=\"egress-$Environment\"}[$__range])/\nsum_over_time(requests_count_total{resource_group=\"egress-$Environment\"}[$__range])) * 100",
-          "format": "table",
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "F"
-        },
-        {
-          "expr": "sum_over_time(http2xx_count_total{resource_group=\"egress-$Environment\"}[$__range])",
-          "format": "table",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "A"
-        },
-        {
-          "expr": "sum_over_time(http3xx_count_total{resource_group=\"egress-$Environment\"}[$__range])",
-          "format": "table",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "B"
-        },
-        {
-          "expr": "sum_over_time(http4xx_count_total{resource_group=\"egress-$Environment\"}[$__range])",
-          "format": "table",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "C"
-        },
-        {
-          "expr": "sum_over_time(http5xx_count_total{resource_group=\"egress-$Environment\"}[$__range])",
-          "format": "table",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "D"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Http codes",
-      "transformations": [
-        {
-          "id": "seriesToColumns",
-          "options": {
-            "byField": "resource_name"
-          }
-        },
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "Time": true,
-              "__name__": true,
-              "app_kubernetes_io_instance": true,
-              "app_kubernetes_io_managed_by": true,
-              "app_kubernetes_io_name": true,
-              "argocd_argoproj_io_instance": true,
-              "helm_sh_chart": true,
-              "instance": true,
-              "job": true,
-              "kubernetes_name": true,
-              "kubernetes_namespace": true,
-              "kubernetes_node": true,
-              "prometheus": true,
-              "resource_group": true,
-              "resource_name": false
-            },
-            "indexByName": {},
-            "renameByName": {
-              "Value #A": "2xx",
-              "Value #B": "3xx",
-              "Value #C": "4xx",
-              "Value #D": "5xx",
-              "Value #E": "Requests",
-              "Value #F": "Success rate"
-            }
-          }
-        }
-      ],
-      "type": "table"
     },
     {
       "collapsed": true,
@@ -1342,12 +815,546 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 42
+        "y": 1
+      },
+      "id": 49,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "rgb(255, 255, 255)",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "s"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byRegexp",
+                  "options": "dpegressapi-"
+                },
+                "properties": [
+                  {
+                    "id": "displayName",
+                    "value": "api"
+                  }
+                ]
+              }
+            ]
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 9,
+            "w": 11,
+            "x": 0,
+            "y": 2
+          },
+          "hiddenSeries": false,
+          "id": 51,
+          "interval": "1m",
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": false,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pluginVersion": "7.1.5",
+          "pointradius": 2,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(httpresponsetime_seconds_average{resource_group=\"egress-$Environment\"}) by (resource_name) != 0",
+              "interval": "",
+              "legendFormat": "{{resource_name}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Avg response time",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "s",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "decimals": 2,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 9,
+            "w": 13,
+            "x": 11,
+            "y": 2
+          },
+          "hiddenSeries": false,
+          "id": 61,
+          "interval": "1m",
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "sideWidth": null,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "percentage": false,
+          "pluginVersion": "7.1.5",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "sum(bytessent_bytes_total{resource_group=\"egress-$Environment\"}) by (resource_name)",
+              "interval": "",
+              "legendFormat": "{{resource-name}}",
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Data out",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 1,
+              "format": "decbytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "decimals": 2,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 9,
+            "w": 11,
+            "x": 0,
+            "y": 11
+          },
+          "hiddenSeries": false,
+          "id": 55,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": false,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pluginVersion": "7.1.5",
+          "pointradius": 2,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "requests_count_total{resource_group=\"egress-$Environment\"} != 0",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "{{resource_name}}",
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Requests",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "transformations": [],
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "datasource": null,
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "align": "left",
+                "displayMode": "color-background"
+              },
+              "mappings": [],
+              "min": 0,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "rgba(122, 122, 122, 0)",
+                    "value": null
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byType",
+                  "options": "number"
+                },
+                "properties": [
+                  {
+                    "id": "custom.align",
+                    "value": "center"
+                  },
+                  {
+                    "id": "custom.width",
+                    "value": 100
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Success rate"
+                },
+                "properties": [
+                  {
+                    "id": "unit",
+                    "value": "percent"
+                  },
+                  {
+                    "id": "thresholds",
+                    "value": {
+                      "mode": "percentage",
+                      "steps": [
+                        {
+                          "color": "rgba(115, 191, 105, 0)",
+                          "value": null
+                        },
+                        {
+                          "color": "semi-dark-red",
+                          "value": 0
+                        },
+                        {
+                          "color": "semi-dark-yellow",
+                          "value": 50
+                        },
+                        {
+                          "color": "dark-green",
+                          "value": 100
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 9,
+            "w": 13,
+            "x": 11,
+            "y": 11
+          },
+          "id": 57,
+          "interval": "1m",
+          "options": {
+            "showHeader": true,
+            "sortBy": [
+              {
+                "desc": false,
+                "displayName": "resource_name"
+              }
+            ]
+          },
+          "pluginVersion": "7.1.5",
+          "targets": [
+            {
+              "expr": "sum_over_time(requests_count_total{resource_group=\"egress-$Environment\"}[$__range])",
+              "format": "table",
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "",
+              "refId": "E"
+            },
+            {
+              "expr": "(sum_over_time(http2xx_count_total{resource_group=\"egress-$Environment\"}[$__range])/\nsum_over_time(requests_count_total{resource_group=\"egress-$Environment\"}[$__range])) * 100",
+              "format": "table",
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "",
+              "refId": "F"
+            },
+            {
+              "expr": "sum_over_time(http2xx_count_total{resource_group=\"egress-$Environment\"}[$__range])",
+              "format": "table",
+              "hide": false,
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "",
+              "refId": "A"
+            },
+            {
+              "expr": "sum_over_time(http3xx_count_total{resource_group=\"egress-$Environment\"}[$__range])",
+              "format": "table",
+              "hide": false,
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "",
+              "refId": "B"
+            },
+            {
+              "expr": "sum_over_time(http4xx_count_total{resource_group=\"egress-$Environment\"}[$__range])",
+              "format": "table",
+              "hide": false,
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "",
+              "refId": "C"
+            },
+            {
+              "expr": "sum_over_time(http5xx_count_total{resource_group=\"egress-$Environment\"}[$__range])",
+              "format": "table",
+              "hide": false,
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "",
+              "refId": "D"
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Http codes",
+          "transformations": [
+            {
+              "id": "seriesToColumns",
+              "options": {
+                "byField": "resource_name"
+              }
+            },
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Time": true,
+                  "__name__": true,
+                  "app_kubernetes_io_instance": true,
+                  "app_kubernetes_io_managed_by": true,
+                  "app_kubernetes_io_name": true,
+                  "argocd_argoproj_io_instance": true,
+                  "helm_sh_chart": true,
+                  "instance": true,
+                  "job": true,
+                  "kubernetes_name": true,
+                  "kubernetes_namespace": true,
+                  "kubernetes_node": true,
+                  "prometheus": true,
+                  "resource_group": true,
+                  "resource_name": false
+                },
+                "indexByName": {},
+                "renameByName": {
+                  "Value #A": "2xx",
+                  "Value #B": "3xx",
+                  "Value #C": "4xx",
+                  "Value #D": "5xx",
+                  "Value #E": "Requests",
+                  "Value #F": "Success rate"
+                }
+              }
+            }
+          ],
+          "type": "table"
+        }
+      ],
+      "repeat": null,
+      "title": "Egress",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 2
       },
       "id": 15,
       "panels": [
         {
-          "datasource": "Prometheus",
+          "datasource": null,
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -1402,10 +1409,11 @@
           "type": "stat"
         },
         {
-          "datasource": "Prometheus",
+          "datasource": null,
           "fieldConfig": {
             "defaults": {
               "custom": {},
+              "decimals": 2,
               "mappings": [],
               "min": 0,
               "thresholds": {
@@ -1454,7 +1462,7 @@
           "repeat": null,
           "targets": [
             {
-              "expr": "activemessages_count_total{resource_group=\"shared-$Environment\"}",
+              "expr": "activemessages_count_total{resource_group=\"shared-$Environment\"} != 0",
               "interval": "",
               "legendFormat": "",
               "refId": "A"
@@ -1466,10 +1474,11 @@
           "type": "stat"
         },
         {
-          "datasource": "Prometheus",
+          "datasource": null,
           "fieldConfig": {
             "defaults": {
               "custom": {},
+              "decimals": 1,
               "mappings": [],
               "min": 0,
               "thresholds": {
@@ -1517,7 +1526,7 @@
           "pluginVersion": "7.1.5",
           "targets": [
             {
-              "expr": "messages_count_total{resource_group=\"shared-$Environment\"}",
+              "expr": "messages_count_total{resource_group=\"shared-$Environment\"} != 0",
               "interval": "",
               "legendFormat": "",
               "refId": "A"
@@ -1529,10 +1538,11 @@
           "type": "stat"
         },
         {
-          "datasource": "Prometheus",
+          "datasource": null,
           "fieldConfig": {
             "defaults": {
               "custom": {},
+              "decimals": 1,
               "mappings": [
                 {
                   "from": "",
@@ -1591,7 +1601,7 @@
           "type": "stat"
         },
         {
-          "datasource": "Prometheus",
+          "datasource": null,
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -1612,18 +1622,6 @@
                   {
                     "color": "rgb(255, 255, 255)",
                     "value": null
-                  },
-                  {
-                    "color": "dark-green",
-                    "value": 0
-                  },
-                  {
-                    "color": "#EAB839",
-                    "value": 50
-                  },
-                  {
-                    "color": "dark-red",
-                    "value": 100
                   }
                 ]
               },
@@ -1655,7 +1653,7 @@
           "pluginVersion": "7.1.5",
           "targets": [
             {
-              "expr": "deadletteredmessages_count_total{resource_group=\"shared-$Environment\"}",
+              "expr": "deadletteredmessages_count_total{resource_group=\"shared-$Environment\"} != 0",
               "interval": "",
               "legendFormat": "",
               "refId": "A"
@@ -1672,7 +1670,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": null,
-          "decimals": null,
+          "decimals": 1,
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -1694,7 +1692,8 @@
                     "value": 100
                   }
                 ]
-              }
+              },
+              "unit": "short"
             },
             "overrides": []
           },
@@ -1742,19 +1741,19 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "scheduledmessages_count_total{resource_group=\"shared-$Environment\"}",
+              "expr": "scheduledmessages_count_total{resource_group=\"shared-$Environment\"} != 0",
               "interval": "",
               "legendFormat": "Scheduled",
               "refId": "F"
             },
             {
-              "expr": "incomingmessages_count_total{resource_group=\"shared-$Environment\"}",
+              "expr": "incomingmessages_count_total{resource_group=\"shared-$Environment\"} != 0",
               "interval": "",
               "legendFormat": "Incoming",
               "refId": "A"
             },
             {
-              "expr": "outgoingmessages_count_total{resource_group=\"shared-$Environment\"}",
+              "expr": "outgoingmessages_count_total{resource_group=\"shared-$Environment\"} != 0",
               "interval": "",
               "legendFormat": "Outgoing",
               "refId": "B"
@@ -1808,7 +1807,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": null,
-          "decimals": null,
+          "decimals": 1,
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -1852,6 +1851,7 @@
             "min": false,
             "rightSide": true,
             "show": true,
+            "sideWidth": null,
             "total": false,
             "values": true
           },
@@ -1876,16 +1876,22 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "messages_count_average{resource_group=\"shared-$Environment\"} - deadletteredmessages_count_average{resource_group=\"shared-$Environment\"}",
+              "expr": "messages_count_average{resource_group=\"shared-$Environment\"} != 0",
               "interval": "",
-              "legendFormat": "Messages - deadlettered",
+              "legendFormat": "Messages count",
               "refId": "B"
             },
             {
-              "expr": "activemessages_count_average{resource_group=\"shared-$Environment\"}",
+              "expr": "activemessages_count_average{resource_group=\"shared-$Environment\"} != 0",
               "interval": "",
               "legendFormat": "Active",
               "refId": "C"
+            },
+            {
+              "expr": "deadletteredmessages_count_average{resource_group=\"shared-$Environment\"} != 0",
+              "interval": "",
+              "legendFormat": "Deadlettered",
+              "refId": "A"
             }
           ],
           "thresholds": [],
@@ -1931,11 +1937,11 @@
           }
         },
         {
-          "datasource": "Prometheus",
+          "datasource": null,
           "fieldConfig": {
             "defaults": {
               "custom": {},
-              "decimals": 2,
+              "decimals": 1,
               "mappings": [],
               "thresholds": {
                 "mode": "percentage",
@@ -1986,11 +1992,11 @@
           "type": "stat"
         },
         {
-          "datasource": "Prometheus",
+          "datasource": null,
           "fieldConfig": {
             "defaults": {
               "custom": {},
-              "decimals": 2,
+              "decimals": 1,
               "mappings": [],
               "thresholds": {
                 "mode": "percentage",
@@ -2041,7 +2047,7 @@
           "type": "stat"
         },
         {
-          "datasource": "Prometheus",
+          "datasource": null,
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -2108,7 +2114,7 @@
           "type": "stat"
         },
         {
-          "datasource": "Prometheus",
+          "datasource": null,
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -2180,7 +2186,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": null,
-          "decimals": null,
+          "decimals": 1,
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2328,7 +2334,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 3
       },
       "id": 64,
       "panels": [
@@ -2619,6 +2625,7 @@
           "fieldConfig": {
             "defaults": {
               "custom": {},
+              "decimals": 2,
               "mappings": [],
               "min": 0,
               "thresholds": {
@@ -2675,6 +2682,7 @@
           "fieldConfig": {
             "defaults": {
               "custom": {},
+              "decimals": 2,
               "mappings": [],
               "min": 0,
               "thresholds": {
@@ -2731,8 +2739,8 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "Prometheus",
-          "decimals": null,
+          "datasource": null,
+          "decimals": 1,
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -2884,7 +2892,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "Prometheus",
-          "decimals": null,
+          "decimals": 1,
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -3007,6 +3015,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": null,
+          "decimals": 1,
           "fieldConfig": {
             "defaults": {
               "custom": {}
@@ -3119,8 +3128,8 @@
         "allValue": null,
         "current": {
           "selected": true,
-          "text": "prod",
-          "value": "prod"
+          "text": "test",
+          "value": "test"
         },
         "hide": 0,
         "includeAll": false,
@@ -3129,7 +3138,7 @@
         "name": "Environment",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "test",
             "value": "test"
           },
@@ -3139,7 +3148,7 @@
             "value": "preprod"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "prod",
             "value": "prod"
           }
@@ -3172,5 +3181,5 @@
   "timezone": "",
   "title": "Azure dashboard",
   "uid": "VtyYA5KMz",
-  "version": 12
+  "version": 24
 }
