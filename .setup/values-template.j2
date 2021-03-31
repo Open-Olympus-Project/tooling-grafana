@@ -11,3 +11,22 @@ ingress:
 grafana.ini:
   server:
     root_url: https://{{ fqdn }}/grafana
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://tooling-prometheus-server.monitoring/prometheus
+        access: proxy
+        isDefault: false 
+        jsonData:
+          timeInterval: '1m'
+      - name: Thanos
+        type: prometheus
+        url: http://tooling-thanos-query-http.monitoring:10902
+        access: proxy
+        isDefault: true 
+        jsonData:
+          timeInterval: '1m'
