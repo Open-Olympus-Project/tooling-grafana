@@ -197,7 +197,7 @@ grafana:
   extraInitContainers: []
 
   ## Enable an Specify container in extraContainers. This is meant to allow adding an authentication proxy to a grafana pod
-  extraContainers: |
+  extraContainers: []
   # - name: proxy
   #   image: quay.io/gambol99/keycloak-proxy:latest
   #   args:
@@ -425,7 +425,7 @@ grafana:
   ## grafana Authentication can be enabled with the following values on grafana.ini
     server:
   # The full public facing url you use in browser, used for redirects and emails
-      root_url: https://observability.westeurope.cloudapp.azure.com/grafana
+      root_url: example.url.com
   # https://grafana.com/docs/grafana/latest/auth/github/#enable-github-in-grafana
   # auth.github:
   #    enabled: false
